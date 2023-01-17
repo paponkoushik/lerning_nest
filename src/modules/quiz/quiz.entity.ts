@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('quizzes')
 export class Quiz extends BaseEntity {
@@ -16,4 +16,10 @@ export class Quiz extends BaseEntity {
     type: 'text',
   })
   description: string;
+
+  @Column({
+    type: 'boolean',
+    default: 1,
+  })
+  isActive: boolean;
 }
