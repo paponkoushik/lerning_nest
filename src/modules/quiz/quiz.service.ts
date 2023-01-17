@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CreateQuizDto } from './dto/CreateQuiz.dto';
 
 @Injectable()
 export class QuizService {
@@ -6,7 +7,7 @@ export class QuizService {
     return [1, 2, 3, 4];
   }
 
-  createQuiz(quizData: { name: string; age: number }): unknown {
+  createQuiz(quizData: CreateQuizDto): unknown {
     return { data: quizData };
   }
 }
