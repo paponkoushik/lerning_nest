@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Post, HttpCode, ValidationPipe, UsePipes } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  HttpCode,
+  ValidationPipe,
+  UsePipes,
+} from '@nestjs/common';
 import { QuizService } from './quiz.service';
 import { CreateQuizDto } from './dto/CreateQuiz.dto';
 
@@ -12,7 +20,7 @@ export class QuizController {
   @Post('/create')
   @HttpCode(200)
   @UsePipes(ValidationPipe)
-  create(@Body() quizData: CreateQuizDto) {
-    return this.quizService.createQuiz(quizData);
+  async create(@Body() quizData: CreateQuizDto) {
+    return await this.quizService.createQuiz(quizData);
   }
 }

@@ -10,7 +10,7 @@ export class Quiz extends BaseEntity {
   @Column({
     type: 'varchar',
   })
-  title: 'test';
+  title: string;
 
   @Column({
     type: 'text',
